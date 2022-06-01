@@ -1,0 +1,18 @@
+<div class="container">
+    <div class = "heading">
+        <h2>Send money</h2>
+    </div>
+    <form [formGroup]="transactForm" (ngSubmit)="sendMoney()">
+        <div class="form-group">
+            <label>Recipient Address
+            <input formControlName="recipient" type="text" class="form-control" placeholder="enter address of recipient">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>Amount
+            <input formControlName="amount" type="number" class="form-control" placeholder="enter amount to send">
+            </label>
+            <button type="submit" class="btn btn-primary">Send!</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <h1>Buy New Token</h1>
+    <form #userForm="ngForm" class="form" (ngSubmit)="onSubmit();userForm.reset();" novalidate>
+        {{ userForm.value | json}}
+        <div class="form-group">
+            <label>Seller</label>
+            <input type="text" required #seller="ngModel" [class.is-invalid]="seller.invalid && seller.touched" class="form-control" name="Seller" [(ngModel)]="token.seller">
+        </div>
+        
+        <div ngModelGroup="token">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" name="Name" [(ngModel)]="token.token.name">
+        </div>
+
+        <div class="form-group">
+            <label>Code</label>
+            <input type="text" required #code="ngModel" [class.is-invalid]="code.invalid && code.touched" class="form-control" name="Code" [(ngModel)]="token.token.code">
+        </div>
+
+        <div class="form-group">
+            <label>Unit Price</label>
+            <input type="number" required #unitPrice="ngModel" [class.is-invalid]="unitPrice.invalid && unitPrice.touched" class="form-control" name="unitPrice" [(ngModel)]="token.token.unitPrice">
+        </div>
+
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" required #quantity="ngModel"  [class.is-invalid]="quantity.invalid && quantity.touched" class="form-control" name="quantity" [(ngModel)]="token.token.quantity">
+        </div>
+    </div>
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+

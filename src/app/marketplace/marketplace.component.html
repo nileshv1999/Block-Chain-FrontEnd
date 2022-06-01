@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<h1 style="text-align:center">Market Place</h1>
+<br>
+<br>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Buy/Sell</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of marketPlaceDetails">
+        <td><span>{{detail.name}}</span></td>
+        <td><span>{{detail.code}}</span></td>
+        <td><span>{{detail.unitPrice}}</span></td>
+        <td><span>{{detail.quantity}}</span></td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="buyTokenPreFill(detail.name,detail.code,detail.unitPrice,detail.quantity)">Buy</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  
+
+
+  <div class="container-fluid" [hidden]="this.isShow">
+    <h1>Buy New Token</h1>
+    
+    <form #userForm="ngForm" class="form" (ngSubmit)="onSubmit();userForm.reset();" novalidate>
+        
+        <div class="form-group">
+            <label>Seller</label>
+            <input type="text" required #seller="ngModel" [class.is-invalid]="seller.invalid && seller.touched" class="form-control" name="Seller" [(ngModel)]="token.seller">
+        </div>
+        
+        <div ngModelGroup="token">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" name="Name" [(ngModel)]="form_name">
+        </div>
+
+        <div class="form-group">
+            <label>Code</label>
+            <input type="text" required #code="ngModel" [class.is-invalid]="code.invalid && code.touched" class="form-control" name="Code" [(ngModel)]="form_code">
+        </div>
+
+        <div class="form-group">
+            <label>Unit Price</label>
+            <input type="number" required #unitPrice="ngModel" [class.is-invalid]="unitPrice.invalid && unitPrice.touched" class="form-control" name="unitPrice" [(ngModel)]="form_unitPrice">
+        </div>
+
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" required #quantity="ngModel" placeholder="enter Quantity" [class.is-invalid]="quantity.invalid && quantity.touched" class="form-control" name="quantity" [(ngModel)]="form_quantity">
+        </div>
+    </div>
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary">Submit</button>
+        <button [disabled]="userForm.form.invalid" class="btn btn-danger" (click)="closeForm()">Cancel</button>
+    </form>
+
+</div>
+
+
+
+
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+

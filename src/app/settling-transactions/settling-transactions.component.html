@@ -1,0 +1,32 @@
+<div style="font-family:fantasy;" class="text-center d-flex flex-column">
+<h1>Settling Trasactions</h1>
+</div><br>
+<div class="wrapper button4">
+<button  (click)="settleTransactions()" class="btn btn-success set-button">Settle Transactions</button><br>
+</div>
+<br>
+<div class="container">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Last Hash</th>
+          <th>Hash</th>
+        </tr>
+      </thead>
+<tbody>
+    
+    <tr *ngFor="let detail of transactionsDetails">
+        
+      <td><span>{{detail.timestamp}}</span></td>
+
+      
+      <td><span>{{detail.lastHash}}</span></td>
+
+      
+      <td><span>{{detail.hash}}</span></td>
+
+    </tr>
+  </tbody>
+</table>
+</div>

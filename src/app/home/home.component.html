@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<br>
+<h1>Welcome {{username}}</h1>
+<br>
+<h1 style="text-align:center">Portfolio Details</h1>
+<br>
+<br>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of portfolioDetails">
+        <td><span>{{detail.name}}</span></td>
+        <td><span>{{detail.code}}</span></td>
+        <td><span>{{detail.unitPrice}}</span></td>
+        <td><span>{{detail.quantity}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

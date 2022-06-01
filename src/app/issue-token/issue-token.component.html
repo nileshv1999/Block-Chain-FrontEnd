@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div style="font-family:fantasy;" class="text-center flex-column"><h1>Issue New Token</h1></div>
+    <form #userForm="ngForm" class="form" (ngSubmit)="onSubmit();userForm.reset();" novalidate>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" name="Name" [(ngModel)]="newToken.name">
+        </div>
+
+        <div class="form-group">
+            <label>Code</label>
+            <input type="text" required #code="ngModel" [class.is-invalid]="code.invalid && code.touched" class="form-control" name="Code" [(ngModel)]="newToken.code">
+        </div>
+
+        <div class="form-group">
+            <label>Unit Price</label>
+            <input type="number" required #unitPrice="ngModel" [class.is-invalid]="unitPrice.invalid && unitPrice.touched" class="form-control" name="unitPrice" [(ngModel)]="newToken.unitPrice">
+        </div>
+
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" required #quantity="ngModel"  [class.is-invalid]="quantity.invalid && quantity.touched" class="form-control" name="quantity" [(ngModel)]="newToken.quantity">
+        </div>
+
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+

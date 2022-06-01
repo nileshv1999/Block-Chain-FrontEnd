@@ -1,0 +1,14 @@
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+.button4 {
+    font-size: 20px;
+    border-radius: 8px;
+    
+}

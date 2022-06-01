@@ -1,0 +1,31 @@
+
+  <br>
+  <br>
+  <div >
+  <div style="font-family:fantasy;" class="text-center d-flex flex-column"> <i class='bx bxs-badge-check'></i> <span class="text-center fs-1">Login
+      Page</span> </div>
+
+
+  <form action="">
+    <div class="container mt-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <div style="background-color:black;" class="card px-5 py-5" id="form1">
+            <div class="input text-center mb-4">
+              <label style="color:white; font-family:fantasy;" for="">Username</label><br>
+              <input type="text" name="userName" [(ngModel)]="userName">
+            </div>
+            <div class="input text-center mb-4">
+              <label for="" style="color:white; font-family:fantasy;" >Password</label><br>
+              <input type="text" name="password" [(ngModel)]="password">
+            </div>
+            <br>
+            <div class="input text-center">
+              <input type="button" value="login" (click)="LoginUser()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
